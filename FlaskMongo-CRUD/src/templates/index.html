@@ -1,0 +1,52 @@
+<!--
+    Para inspeccionar alguna pagina como formato html se puede hacer con:
+    ctrl + u
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with Mongo</title>
+</head>
+<body>
+    <h1>BIENVENIDO</h1>
+    <h2>* Registro </h2>
+    <form action = "/guardar_personas" method = "post">
+        <input type = "text" name = "nombre">
+        <input type = "text" name = "apellido">
+        <input type = "text" name = "telefono">
+        <button type = "submit">Guardar</button>
+
+    </form>
+
+    <h2>* Visualización de datos </h2>
+    
+    <!--
+        Se utiliza jinja2 para hacer la visualización y correspondiente actualización de los datos mediante un for que recorra todas nuestras colecciones
+    -->
+
+    {%for persona in personas %}
+    <!--<li>
+           
+           Nombre:  {{persona.nombre}} <br>
+           Apellido:  {{persona.apellido}}<br>
+           Telefono:  {{persona.telefono}}<br>
+            <br>
+    </li> -->
+    
+    <!-- Se añade un criterio de busqueda el cual va a ser nombre por medio de jinja2 para actualizar por medio de llamar el objeto con su parametro correspondiente de app.py-->
+    <form action="/editar_persona/{{ persona.nombre }}" method="post">
+        <input type="text" name="nombre" value="{{persona.nombre}}">
+        <input type="text" name="apellido" value="{{persona.apellido}}">
+        <input type="text" name="telefono" value="{{persona.telefono}}">
+        <button type="submit">Actualizar</button>
+        <!--Con la etiqueta de enlace y llamando al metodo eliminar se crea un acceso capaz de eliminar el registro-->
+        <!--Se añade javaScript para mandar un mensaje de alerta-->
+        <a href="{{url_for('eliminar', nombre_persona=persona.nombre)}}"onclick="return confirm('¿Esta seguro de eliminar el documento con el nombre {{persona.nombre}}? ')">Eliminar</a>
+        <hr>
+    </form>
+    {%endfor%}
+    
+</body>
+</html>

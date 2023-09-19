@@ -1,0 +1,10 @@
+{% extends './layout.html' %}
+
+{% block titulo %}
+    Inicio de la aplicación
+{% endblock %}
+
+{% block body %}
+    <h1>Bienvenido, tu nombre es: {{ datos.nombre }} y tu altura:  {{ datos.altura }} cm</h1>
+    <p> {{ datos.resultado }}</p>
+{% endblock %}

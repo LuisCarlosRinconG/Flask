@@ -1,0 +1,22 @@
+{#LLama al layout(plantilla html)#}
+{%extends './layout.html'%}
+
+{%block titulo%}
+    PERFIL
+{%endblock%}
+
+{% block body %}
+    <h1>Este es el perfil de usuario</h1>
+    
+    <h1>Bienvenido {{datos1.nombre}} {{datos1.apellido}}</h1>
+    <h1>Este es tu numero favorito :  {{datos1.numero}}</h1>
+    {% if datos1.num_asignaturas > 0 %}    
+        <ul>
+            {% for a in datos1.asignaturas %}
+            <li>{{ a }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay asignaturas registradas.</p>    
+    {% endif %} 
+{% endblock %}

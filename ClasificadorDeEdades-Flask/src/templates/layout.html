@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {% endblock %}</title>
+    <style>
+        body{
+            background-color:rgb(126, 75, 173)
+        }
+    </style>
+    <link REL="stylesheet"
+        href="{{url_for('static',filename='css/estilo.css')}}">
+</head>
+<body>
+    <hr>
+    {% block body %}
+    {% endblock %}
+
+    {% block seccion1 %}
+    {% endblock %}
+    <hr>
+    {% block footer %}
+    {% endblock %}
+
+    {#Creamos todos los bloques que consideremos necesarios#}
+</body>
+</html>

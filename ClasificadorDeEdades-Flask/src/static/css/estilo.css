@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+
+body{
+    text-align: center;
+    background-color:rgb(215, 242, 243);;
+    font-family: 'Tilt Prism', cursive;
+    background: radial-gradient(circle, #db76f5, #032c38)
+}
+h1{
+    font-weight: 700;
+    padding: 10px;
+    border: 1px solid rgb(3, 3, 3);
+    border-radius:4px;
+    background-color: rgb(124, 174, 221);
+    background: radial-gradient(circle, #788bdf, #010a3d)
+    
+}
+
+p{
+    font-weight: 700;
+    padding: 10px;
+    border: 1px solid rgb(3, 3, 3);
+    border-radius:4px;
+    background-color: rgb(124, 174, 221);
+    background: radial-gradient(circle, #788bdf, #010a3d)
+}
