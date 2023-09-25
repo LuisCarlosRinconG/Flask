@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block titulo %}
+Editar Tarea
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Editar Tarea</h3>
+            <form action="{{url_for('actualizar_tarea')}}" method="post">
+                {# Enviar el id en un campo oculto #}
+                <input type="hidden" name="id" value="{{tarea[0]}}">
+                <label for="nombre">Nombre:</label>
+                <input value="{{tarea[1]}}" required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
+                <label for="descripcion">Descripción</label>
+                <input value="{{tarea[2]}}" required type="text" class="input" placeholder="Descripción" name="descripcion" id="descripcion">
+                <label for="tiempo">Tiempo</label>
+                <input value="{{tarea[3]}}" required type="text" class="input" placeholder="Tiempo" name="tiempo" id="tiempo">
+                <label for="encargado">Encargado</label>
+                <input value="{{tarea[4]}}" required type="text" class="input" placeholder="Encargado" name="encargado" id="encargado">
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('index')}}" class="button is-primary mt-2">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

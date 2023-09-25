@@ -1,0 +1,1 @@
+Luis Cabrera Benito. (2021, 30 marzo). Conexión Flask con MySQL y Python - CRUD [Vídeo]. YouTube. https://www.youtube.com/watch?v=j--rzgiE97c

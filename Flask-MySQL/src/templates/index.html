@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block titulo %} Tareas {% endblock %}
+{% block contenido %}
+
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Tareas</h3>
+            <a href="{{url_for('formulario_agregar_tarea')}}" class="button is-success">Agregar</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Tiempo</th>
+                        <th>Encargado</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in tareas%}
+                    <tr>
+                        <td>{{user[1]}}</td>
+                        <td>{{user[2]}}</td>
+                        <td>{{user[3]}}</td>
+                        <td>{{user[4]}}</td>
+                        <td>
+                            {# Pasar el id lo que hay en user[0] #}
+                            <a href="{{url_for('editar_tarea', id=user[0])}}" class="button is-info">Editar</a>
+                        </td>
+                        <td>
+                            <form action="{{url_for('eliminar_tarea')}}" method="POST">
+                                <input type="hidden" name="id" value="{{user[0]}}">
+                                <button class="button is-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}
