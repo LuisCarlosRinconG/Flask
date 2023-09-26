@@ -10,13 +10,14 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
+                        <th>Tarea</th>
                         <th>Descripción</th>
                         <th>Tiempo</th>
                         <th>Encargado</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
+                    <hr>
                 </thead>
                 <tbody>
                     {% for user in tareas%}
@@ -36,6 +37,7 @@
                             </form>
                         </td>
                     </tr>
+                    
                     {% endfor %}
                 </tbody>
             </table>
